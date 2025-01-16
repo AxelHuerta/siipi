@@ -1,44 +1,102 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
-import Card from "../components/Card.astro";
+// import Card from "../components/Card.astro";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Table,
+  TableCaption,
+  TableHeader,
+  TableRow,
+  TableHead,
+  TableBody,
+  TableCell,
+} from "@/components/ui/table";
+import "@/styles/globals.css";
 ---
 
 <Layout>
   <Navbar />
   <main class="max-w-[1400px] mx-auto p-4 grid grid-cols-3 gap-4">
     <Card id="profile">
-      <ul>
-        <li class="text-lg font-bold">Hola, Axel Huerta Hernández</li>
-        <li>Matrícula: 123456789</li>
-        <li>CBI</li>
-        <li>Licenciatura en Computación</li>
-        <li>Inscrito a UEA</li>
-      </ul>
+      <CardHeader>
+        <CardTitle className="text-center">
+          Hola, Axel Huerta Hernández</CardTitle
+        >
+      </CardHeader>
+      <CardContent>
+        <ul>
+          <li>Matrícula: 123456789</li>
+          <li>Inscrito a UEA</li>
+          <li>Licenciatura en Computación</li>
+          <li>CBI</li>
+        </ul>
+      </CardContent>
     </Card>
-    <Card id="info" size="col-span-2">
-      <h2 class="text-xl font-bold">Información general</h2>
-      <ul>
-        <li>Dedicación: Tiempo Completo</li>
-        <li>Créditos inscritos: 44</li>
-        <li>Clave del plan: 30</li>
-        <li>Trimestre de ingreso: 19O</li>
-        <li>Último trimestre ingreso: 24O</li>
-        <li>Créditos contabilizados: 408</li>
-        <li>Email: axelhuerta@dev</li>
-      </ul>
+    <Card id="info">
+      <CardHeader>
+        <CardTitle>Información general</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <ul>
+          <li>Dedicación: Tiempo Completo</li>
+          <li>Créditos inscritos: 44</li>
+          <li>Clave del plan: 30</li>
+          <li>Trimestre de ingreso: 19O</li>
+          <li>Último trimestre ingreso: 24O</li>
+          <li>Créditos contabilizados: 408</li>
+          <li>Email: axelhuerta@dev</li>
+        </ul>
+      </CardContent>
     </Card>
-    <section id="schedule" class="bg-purple-300 col-span-3 min-h-[300px]">
-      <h2>Aquí el horario</h2>
-    </section>
-    <section id="links" class="bg-yellow-300">
-      <ul>
-        <li><a href="">Módulo de Información Escolar</a></li>
-        <li><a href="">UAMI con Perspectiva de Género</a></li>
-      </ul>
-    </section>
-    <section id="tutorias" class="bg-gray-300 col-span-2">
-      <h2>Aquí eso de las tutorias</h2>
-    </section>
-  </main>
-</Layout>
+    <Card>
+      <CardHeader>
+        <CardTitle>Links</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <ul>
+          <li><a href="">Módulo de Información Escolar</a></li>
+          <li><a href="">UAMI con Perspectiva de Género</a></li>
+        </ul>
+      </CardContent>
+    </Card>
+    <Card className="col-span-3">
+      <CardHeader><CardTitle>Horario</CardTitle></CardHeader>
+      <CardContent>
+        <Table>
+          <TableCaption>Horario</TableCaption>
+          <TableHeader>
+            <TableRow>
+              <TableHead>Grupo</TableHead>
+              <TableHead>Nombre</TableHead>
+              <TableHead>Profesor</TableHead>
+              <TableHead>Créditos</TableHead>
+              <TableHead>Lunes</TableHead>
+              <TableHead>Martes</TableHead>
+              <TableHead>Miércoles</TableHead>
+              <TableHead>Jueves</TableHead>
+              <TableHead>Viernes</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            <TableRow>
+              <TableCell>1</TableCell>
+              <TableCell>Matemáticas Discretas</TableCell>
+              <TableCell>Dr. Axel Huerta</TableCell>
+              <TableCell>8</TableCell>
+              <TableCell>18:00 - 20:00 VIRTUAL </TableCell>
+              <TableCell />
+              <TableCell>18:00 - 20:00 VIRTUAL</TableCell>
+              <TableCell />
+              <TableCell>18:00 - 20:00 VIRTUAL</TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
+      </CardContent>
+    </Card>
+    <Card className="col-span-3">
+      <CardHeader><CardTitle>Tutorías</CardTitle></CardHeader>
+      <CardContent />
+    </Card>
+  </main></Layout
+>

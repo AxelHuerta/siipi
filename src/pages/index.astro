@@ -1,11 +1,42 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
 ---
 
 <Layout>
-	<Welcome />
+  <Navbar />
+  <main class="max-w-[1400px] mx-auto p-4 grid grid-cols-3 gap-4">
+    <section id="student-info" class="bg-blue-300">
+      <ul>
+        <li>Hola, Axel Huerta Hernández</li>
+        <li>Matrícula: 123456789</li>
+        <li>CBI</li>
+        <li>Licenciatura en Computación</li>
+        <li>Inscrito a UEA</li>
+      </ul>
+    </section>
+    <section id="student-details" class="bg-red-300 col-span-2">
+      <ul>
+        <li>Dedicación: Tiempo Completo</li>
+        <li>Créditos inscritos: 44</li>
+        <li>Clave del plan: 30</li>
+        <li>Trimestre de ingreso: 19O</li>
+        <li>Último trimestre ingreso: 24O</li>
+        <li>Créditos contabilizados: 408</li>
+        <li>Email: axelhuerta@dev</li>
+      </ul>
+    </section>
+    <section id="schedule" class="bg-purple-300 col-span-3 min-h-[300px]">
+      <h2>Aquí el horario</h2>
+    </section>
+    <section id="links" class="bg-yellow-300">
+      <ul>
+        <li><a href="">Módulo de Información Escolar</a></li>
+        <li><a href="">UAMI con Perspectiva de Género</a></li>
+      </ul>
+    </section>
+    <section id="tutorias" class="bg-gray-300 col-span-2">
+      <h2>Aquí eso de las tutorias</h2>
+    </section>
+  </main>
 </Layout>

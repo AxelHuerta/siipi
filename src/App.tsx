@@ -14,9 +14,8 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import Layout from "./components/layout";
-import { env } from "process";
 
-const API_URL = env.API_URL || "http://localhost:3000";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
 
 async function getUserData() {
   const api = axios.create({

@@ -18,13 +18,22 @@ import Layout from "./components/layout";
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000/api";
 
 async function getUserData() {
-  const api = axios.create({
-    baseURL: `${API_URL}`,
-    withCredentials: true, // Envía cookies automáticamente
-  });
+  try {
+    const api = axios.create({
+      baseURL: API_URL,
+      withCredentials: true,
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    });
 
-  const response = await api.get("/proxy-alumno");
-  return response.data;
+    const response = await api.get("/proxy-alumno");
+    return response.data;
+  } catch (error) {
+    console.error("Error en getUserData:", error);
+    throw error;
+  }
 }
 export interface Student {
   success: boolean;

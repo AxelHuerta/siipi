@@ -13,6 +13,9 @@ import { Label } from "@/components/ui/label";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router";
+import { env } from "process";
+
+const API_URL = env.API_URL || "http://localhost:3000/api";
 
 export default function LoginPage() {
   const [data, setData] = useState({
@@ -32,7 +35,7 @@ export default function LoginPage() {
 
   async function handleForm() {
     const response = await axios
-      .post("http://localhost:3000/api/proxy-login", data)
+      .post(`${API_URL}/proxy-login`, data)
       .then((res) => res)
       .catch((err) => err);
     console.log(response.data);

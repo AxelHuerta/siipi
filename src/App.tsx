@@ -14,10 +14,13 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import Layout from "./components/layout";
+import { env } from "process";
+
+const API_URL = env.API_URL || "http://localhost:3000";
 
 async function getUserData() {
   const api = axios.create({
-    baseURL: "http://localhost:3000/api",
+    baseURL: `${API_URL}/api`,
     withCredentials: true, // Envía cookies automáticamente
   });
 
